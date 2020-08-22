@@ -31,7 +31,7 @@ phone_wid=70.49;
 //phone length[143.82]
 phone_len=145.17;
 //phone thickness[9.1]
-phone_thk=7.45;
+phone_thk=7.50;
 //phone corner radius[5.0]
 phone_rad=5.0;
 
@@ -635,3 +635,4 @@ module roundCylinder(height,radius,rounding){
   }
 }
 //
+
