@@ -61,13 +61,13 @@ es_zoffset=1.3;
 //number of back cover slot[0-2]
 bc_num=1;
 //back cover slot 1 x size[9.0]
-bc1_xsize=25;
+bc1_xsize=24;
 //back cover slot 1 y size[17.5]
-bc1_ysize=10;
+bc1_ysize=7;
 //back cover slot 1 x offset from left edge[54.5]
-bc1_xoffset = phone_wid - phone_rad - bc1_xsize;
+bc1_xoffset = phone_wid - phone_rad/2 - bc1_xsize;
 //back cover slot 1 y offset from bottom edge[122.8]
-bc1_yoffset= phone_len - phone_rad - bc1_ysize;
+bc1_yoffset= phone_len - phone_rad/2 - bc1_ysize;
 //back cover slot 2 x size[14.4]
 bc2_xsize=14.4;
 //back cover slot 2 y size[2.0]
