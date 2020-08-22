@@ -33,7 +33,7 @@ phone_len=145.17;
 //phone thickness[9.1]
 phone_thk=7.50;
 //phone corner radius[5.0]
-phone_rad=5.0;
+phone_rad=7.0;
 
 /* [case var] */
 //case's back cover thickness[1.2]
