@@ -294,7 +294,7 @@ union(){
               chars,
               size=phone_wid/10,
               //font="LiberationMono-Bold",
-              font="Source Code Pro",
+              font="Times New Roman",
               halign="center",
               valign="center");
   }
