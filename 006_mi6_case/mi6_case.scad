@@ -101,15 +101,15 @@ te2_zoffset=4;
 //number of bottom edge slot[0-3]
 be_num=3;
 //bottom edge slot 1 x size[12]
-be1_xsize=8;
+be1_xsize=6;
 //bottom edge slot 1 z size[2.5]
-be1_zsize=0.1;
+be1_zsize=0.2;
 //bottom edge slot 1 x offset from left edge[53]
-be1_xoffset= 16;
+be1_xoffset= 18;
 //bottom edge slot 1 z offset from back cover[3.3]
-be1_zoffset=3.4;
+be1_zoffset=4.0;
 //bottom edge slot 2 x size
-be2_xsize=9;
+be2_xsize=8;
 //bottom edge slot 2 z size
 be2_zsize=0.8;
 //bottom edge slot 2 x offset from left edge
@@ -153,15 +153,15 @@ re1_ysize=10;
 //right edge slot 1 z size[1.3]
 re1_zsize=0.6;
 //right edge slot 1 y offset from bottom edge[111]
-re1_yoffset=80;
+re1_yoffset=82;
 //right edge slot 1 z offset from back cover[4.5]
-re1_zoffset=3.4;
+re1_zoffset=4.0;
 //right edge slot 2 y size
 re2_ysize=20;
 //right edge slot 2 z size
 re2_zsize=re1_zsize;
 //right edge slot 2 y offset from bottom edge
-re2_yoffset=97;
+re2_yoffset=98;
 //right edge slot 2 z offset from back cover
 re2_zoffset=re1_zoffset;
 
@@ -181,40 +181,32 @@ re1_xoffset=phone_wid;
 //right edge slot 2 x offset from left edge
 re2_xoffset=phone_wid;
 
-baseus_rad = 10;
+baseus_rad = 6;
 baseus_wid = 38;
 baseus_len = 50;
+baseus_step = 1;
 
 //make it big enough
 baseus_height = 20;
 
-module baseus_cylinder() {
-  cylinder(r=baseus_rad,h=baseus_height);
+module baseus_cylinder(rad=baseus_rad) {
+  cylinder(r=rad,h=baseus_height);
+}
+
+module baseus_round_cube(rad=baseus_rad, len=baseus_len, wid=baseus_wid) {
+    translate([baseus_rad,baseus_rad,0])
+    hull() {
+      baseus_cylinder(rad=rad);
+      translate([wid-2*rad,0,0]) baseus_cylinder(rad=rad);
+      translate([0,len-2*rad,0]) baseus_cylinder(rad=rad);
+      translate([wid-2*rad,len-2*rad,0]) baseus_cylinder(rad=rad);
+    }
 }
 
 module baseus() {
-  translate([
-    (phone_wid-baseus_wid)/2,
-    (phone_len-baseus_len)/2,
-    -0.6])
-
-{
-      color("blue") 
-      cube([baseus_wid,baseus_len,baseus_height]);
-
-
-    color("green")
-    translate([baseus_rad,baseus_rad,-baseus_height])
-    hull() {
-      baseus_cylinder();
-      translate([baseus_wid-2*baseus_rad,0,0]) baseus_cylinder();
-      translate([0,baseus_len-2*baseus_rad,0]) baseus_cylinder();
-      translate([baseus_wid-2*baseus_rad,baseus_len-2*baseus_rad,0]) baseus_cylinder();
-    }
+    color("blue")  baseus_round_cube();
+    color("green") translate([baseus_step,baseus_step,-baseus_height]) baseus_round_cube(rad=baseus_rad, len=baseus_len-baseus_step * 2, wid=baseus_wid-baseus_step * 2);
 }
-}
-
-//baseus()
 
 ////----main----
 difference()
@@ -250,7 +242,7 @@ union(){
 
     //cut back cover slot
     back_cover();
-    baseus();
+    translate([(phone_wid-baseus_wid)/2,(phone_len-baseus_len)/2,-case_thk/2]) baseus();
 
     //cut top edge slot
     top_edge();
@@ -346,8 +338,8 @@ union(){
       phone_thk+case_lip/2])
     rotate([0,0,90])
       resize ([c2c_ywid/3,0,0])
-        lip();    
-}    
+        lip();
+}
 ////----end main----
 
 //cut test print
@@ -472,7 +464,7 @@ if (be_num>=2)
   ye_slot(
     be2_xsize,
     be2_zsize,
-    case_wall_thk+slot_dep_adj);  
+    case_wall_thk+slot_dep_adj);
 
 if (be_num==3)
   translate([
@@ -483,7 +475,7 @@ if (be_num==3)
   ye_slot(
     be3_xsize,
     be3_zsize,
-    case_wall_thk+slot_dep_adj);  
+    case_wall_thk+slot_dep_adj);
 }
 //
 
