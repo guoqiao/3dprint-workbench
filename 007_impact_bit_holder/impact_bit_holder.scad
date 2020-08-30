@@ -6,43 +6,43 @@ $fs = 2;  // minimal size of a fragment, default 2, minimal 0.01
 $fn = 0;
 
 // real size: 7.15~7.20mm
-d_hole = 7.50;  // hole diameter
-h_hole = 15;  // how deep is the hole
-h_hole_bottom = 3; // hole bottom height
+hole_d = 7.50;  // hole diameter
+hole_h = 15;  // hole depth/height
+hole_b = 3; // hole bottom thick/height
 
-s_cube = 20;
-h_cube = h_hole + h_hole_bottom;
+cell_s = 20; // cell size for each hole
+cell_h = hole_h + hole_b;
 
-n_x = 1;  // how many holes on x axis
-n_y = 1;  // how many holes on y axis
+hole_n_x = 8;  // how many holes on x axis
+hole_n_y = 4;  // how many holes on y axis
 
-s_box_x = s_cube * n_x;
-s_box_y = s_cube * n_y;
+box_s_x = cell_s * hole_n_x;
+box_s_y = cell_s * hole_n_y;
+box_h = cell_h;
 
 delta = 0.01;
 
 module hole() {
-    translate([s_cube/2, s_cube/2, h_hole_bottom]) color("red") cylinder(d=d_hole, h=h_hole+delta);
+    translate([cell_s/2, cell_s/2, hole_b]) color("red") cylinder(d=hole_d, h=hole_h+delta);
 }
 
 module matrix() {
-    for (y = [0:n_y-1]) {
-        for (x = [0:n_x-1]) {
-            translate([s_cube*x, s_cube*y, 0]) hole();
+    for (y = [0:hole_n_y-1]) {
+        for (x = [0:hole_n_x-1]) {
+            translate([cell_s*x, cell_s*y, 0]) hole();
         }
     }
 }
 
-
 module box() {
-    cube([s_box_x, s_box_y, h_cube]);
+    cube([box_s_x, box_s_y, cell_h]);
 }
 
 module rbox() {
     hull() {
         for (i = [0:1]) {
             for (j = [0:1]) {
-                translate([s_box_x*i, s_box_y*j, 0]) cylinder(d=d_hole, h=h_cube);
+                translate([box_s_x*i, box_s_y*j, 0]) cylinder(d=hole_d, h=cell_h);
             }
         }
     }
