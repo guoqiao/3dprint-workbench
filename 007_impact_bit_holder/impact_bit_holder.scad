@@ -13,8 +13,6 @@ h_hole_bottom = 3; // hole bottom height
 s_cube = 20;
 h_cube = h_hole + h_hole_bottom;
 
-r_sphere = 5;
-
 n_x = 1;  // how many holes on x axis
 n_y = 1;  // how many holes on y axis
 
