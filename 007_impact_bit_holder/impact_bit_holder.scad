@@ -35,7 +35,12 @@ module matrix() {
     }
 }
 
+
 module box() {
+    cube([s_box_x, s_box_y, h_cube]);
+}
+
+module rbox() {
     hull() {
         for (i = [0:1]) {
             for (j = [0:1]) {
