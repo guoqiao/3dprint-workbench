@@ -1,3 +1,6 @@
 [submodule "lib/MCAD"]
 	path = lib/MCAD
 	url = git@github.com:openscad/MCAD.git
+[submodule "lib/dotSCAD"]
+	path = lib/dotSCAD
+	url = git@github.com:JustinSDK/dotSCAD.git
