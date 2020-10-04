@@ -3,9 +3,16 @@ include <threads.scad>
 $fa = 1;
 $fs = 0.4;
 
-metric_thread(diameter=9, pitch=1.5, length=30, leadin=1, leadfac=2.0);
+metric_thread(
+    diameter=9,
+    pitch=1.5,
+    thread_size=1.5,
+    length=30,
+    leadin=1,
+    leadfac=2.0
+);
 
-cylinder(h=4, r1=8, r2=4);
+cylinder(h=9, r1=8, r2=2);
 
 difference() { 
     resize([40,40,10]) sphere(r=20);
