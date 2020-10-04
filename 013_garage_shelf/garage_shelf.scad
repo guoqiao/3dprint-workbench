@@ -18,7 +18,7 @@ layer_1_z = 63; // table top will be 63 + 7 + 3 = 73 cm;
 layer_2_z = 120; // panel top will be 120 + 7 = 127, layer-2 height = 45 cm;
 layer_3_z = 180;
 
-panel_width = 60;
+panel_width = 66;
 support_length = panel_width - size_b * 2;
 echo(support_length=support_length);
 
@@ -48,7 +48,7 @@ module person() {
 }
 
 module layer_1_panel() {
-    color("white") translate([0,0,layer_1_z + size_a]) cube([shelf_width, panel_width, 1.6]);
+    color("white") translate([shelf_width-door_height,0,layer_1_z + size_a]) cube([door_height, panel_width, 1.6]);
 }
 
 module layer_3_panel() {
