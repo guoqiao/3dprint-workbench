@@ -65,7 +65,7 @@ bc1_xsize=28;
 //back cover slot 1 y size[17.5]
 bc1_ysize=8;
 //back cover slot 1 x offset from left edge[54.5]
-bc1_xoffset = 35;
+bc1_xoffset = 37;
 //back cover slot 1 y offset from bottom edge[122.8]
 bc1_yoffset= 133;
 //back cover slot 2 x size[14.4]
