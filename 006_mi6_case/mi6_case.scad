@@ -149,7 +149,7 @@ le2_zoffset=4;
 //number of right edge slot[0-2]
 re_num=1;
 //right edge slot 1 y size[9.9]
-re1_ysize=40;
+re1_ysize=38;
 //right edge slot 1 z size[1.3]
 re1_zsize=1.0;
 //right edge slot 1 y offset from bottom edge[111]
