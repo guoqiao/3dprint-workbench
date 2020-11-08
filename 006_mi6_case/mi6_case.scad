@@ -23,7 +23,7 @@ text_xlocat_factor=0;
 //y factor of the text location[-0.45 to 0.45]
 text_ylocat_factor=-0.4;
 //factor of the test print part[-0.5 to 0.5 =top or bottom part:0=no test print part]
-test_print=0.5;
+test_print=0;
 
 /* [phone dimension var] */
 //phone width[72.36]
