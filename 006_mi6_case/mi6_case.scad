@@ -15,15 +15,15 @@ slot_cl_adj=0.8;
 //adjust the depth of slot, for the slot close to the phone's round corner[0.25-2.00]
 slot_dep_adj=0.25;
 //cut array holes on the back cover[0=no:1=yes]
-array_hole=0;
+array_hole=1;
 //text chars on the back cover[""=no text]
-chars="@guoqiao";
+chars="";
 //x factor of the text location[-0.3 to 0.3]
 text_xlocat_factor=0;
 //y factor of the text location[-0.45 to 0.45]
 text_ylocat_factor=-0.4;
 //factor of the test print part[-0.5 to 0.5 =top or bottom part:0=no test print part]
-test_print=0;
+test_print=0.5;
 
 /* [phone dimension var] */
 //phone width[72.36]
@@ -31,9 +31,9 @@ phone_wid=70.49;
 //phone length[143.82]
 phone_len=145.17;
 //phone thickness[9.1]
-phone_thk=7.50;
+phone_thk=8.0;
 //phone corner radius[5.0]
-phone_rad=7.0;
+phone_rad=10.0;
 
 /* [case var] */
 //case's back cover thickness[1.2]
@@ -41,7 +41,7 @@ case_thk=1.2;
 //case's wall thickness[1.0]
 case_wall_thk=1.0;
 //case's front lip size[1.2]
-case_lip=1.2;
+case_lip=1.4;
 //inner rounding radius between back cover and case wall[1.2]
 rounding=1.2;
 
@@ -61,13 +61,13 @@ es_zoffset=1.3;
 //number of back cover slot[0-2]
 bc_num=1;
 //back cover slot 1 x size[9.0]
-bc1_xsize=24;
+bc1_xsize=28;
 //back cover slot 1 y size[17.5]
-bc1_ysize=7;
+bc1_ysize=8;
 //back cover slot 1 x offset from left edge[54.5]
-bc1_xoffset = phone_wid - phone_rad/2 - bc1_xsize;
+bc1_xoffset = 35;
 //back cover slot 1 y offset from bottom edge[122.8]
-bc1_yoffset= phone_len - phone_rad/2 - bc1_ysize;
+bc1_yoffset= 133;
 //back cover slot 2 x size[14.4]
 bc2_xsize=14.4;
 //back cover slot 2 y size[2.0]
@@ -107,7 +107,7 @@ be1_zsize=0.2;
 //bottom edge slot 1 x offset from left edge[53]
 be1_xoffset= 18;
 //bottom edge slot 1 z offset from back cover[3.3]
-be1_zoffset=4.0;
+be1_zoffset=4.8;
 //bottom edge slot 2 x size
 be2_xsize=8;
 //bottom edge slot 2 z size
@@ -115,7 +115,7 @@ be2_zsize=0.8;
 //bottom edge slot 2 x offset from left edge
 be2_xoffset=(phone_wid - be2_xsize)/2;
 //bottom edge slot 2 z offset from back cover
-be2_zoffset=be1_zoffset;
+be2_zoffset=4.0;
 //bottom edge slot 3 x size
 be3_xsize=be1_xsize;
 //bottom edge slot 3 z size
@@ -147,15 +147,15 @@ le2_zoffset=4;
 
 /* [right edge var] */
 //number of right edge slot[0-2]
-re_num=2;
+re_num=1;
 //right edge slot 1 y size[9.9]
-re1_ysize=10;
+re1_ysize=40;
 //right edge slot 1 z size[1.3]
-re1_zsize=0.6;
+re1_zsize=1.0;
 //right edge slot 1 y offset from bottom edge[111]
-re1_yoffset=82;
+re1_yoffset=81;
 //right edge slot 1 z offset from back cover[4.5]
-re1_zoffset=4.0;
+re1_zoffset=4.5;
 //right edge slot 2 y size
 re2_ysize=20;
 //right edge slot 2 z size
@@ -242,7 +242,7 @@ union(){
 
     //cut back cover slot
     back_cover();
-    translate([(phone_wid-baseus_wid)/2,(phone_len-baseus_len)/2,-case_thk/2]) baseus();
+    //translate([(phone_wid-baseus_wid)/2,(phone_len-baseus_len)/2,-case_thk/2]) baseus();
 
     //cut top edge slot
     top_edge();
