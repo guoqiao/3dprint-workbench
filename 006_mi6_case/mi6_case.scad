@@ -15,7 +15,7 @@ slot_cl_adj=0.8;
 //adjust the depth of slot, for the slot close to the phone's round corner[0.25-2.00]
 slot_dep_adj=0.25;
 //cut array holes on the back cover[0=no:1=yes]
-array_hole=1;
+array_hole=0;
 //text chars on the back cover[""=no text]
 chars="";
 //x factor of the text location[-0.3 to 0.3]
