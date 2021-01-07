@@ -4,7 +4,7 @@ h = 30;
 
 hole_offset = 8;
 hole_r = 2;
-hole_R = 4;
+hole_R = 3.5;
 
 r = 25;  // inner radius
 thick = 2;
