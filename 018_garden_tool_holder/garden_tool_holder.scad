@@ -3,8 +3,8 @@ $fn=100;
 h = 30;
 
 hole_offset = 8;
-hole_r = 1.5;
-hole_R = 3;
+hole_r = 2;
+hole_R = 4;
 
 r = 25;  // inner radius
 thick = 2;
