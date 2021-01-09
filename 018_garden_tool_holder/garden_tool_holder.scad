@@ -10,6 +10,8 @@ r = 25;  // inner radius
 thick = 2;
 R = r + thick;
 
+e = 2;
+E = e * 2;
 
 module Pipe(){
     difference(){
@@ -18,12 +20,16 @@ module Pipe(){
     }
 }
 
+module Surface(){
+    translate([-(r+thick/2),0,0]) cube([thick,10,h], center=true);
+}
+
 module HoleBig(){
-    translate([r,0,0]) rotate([0,90,0]) cylinder(h=thick+0.02, r=hole_R);
+    translate([r-e,0,0]) rotate([0,90,0]) cylinder(h=thick+E, r=hole_R);
 }
 
 module HoleSmall(){
-    translate([-r,0,0]) rotate([0,-90,0]) cylinder(h=thick+0.02, r=hole_r);
+    translate([-(r-e),0,0]) rotate([0,-90,0]) cylinder(h=thick+E, r=hole_r);
 }
 
 module Holes(){
@@ -33,8 +39,10 @@ module Holes(){
     translate([0,0,-hole_offset]) HoleSmall();
 }
 
-
 difference(){
-    Pipe();
+    union(){
+        Pipe();
+        Surface();
+    }
     Holes();
 }
