@@ -1,4 +1,4 @@
-include <threads.scad>
+include <../lib/threads.scad>
 
 $fa = 1;
 $fs = 0.4;
@@ -14,7 +14,7 @@ metric_thread(
 
 cylinder(h=9, r1=8, r2=2);
 
-difference() { 
+difference() {
     resize([40,40,10]) sphere(r=20);
     translate([0,0,11.5]) cube([40,40,20], center=true);
     translate([0,0,-11.5]) cube([40,40,20], center=true);

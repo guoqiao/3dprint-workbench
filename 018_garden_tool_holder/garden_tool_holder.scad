@@ -16,7 +16,7 @@ E = e * 2;
 module Pipe(){
     difference(){
         cylinder(h=h, r=R, center=true);
-        cylinder(h=h+0.02, r=r, center=true);
+        cylinder(h=h+E, r=r, center=true);
     }
 }
 

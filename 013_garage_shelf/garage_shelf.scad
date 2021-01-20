@@ -4,7 +4,8 @@
 // 63 cm x 6
 // 53 cm x 13 (5 + 3 + 5)
 
-door_height = 198.5;
+// door_height = 198.5;
+door_height = 240;
 door_width = 66;
 
 ceiling_height = 272;

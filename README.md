@@ -6,7 +6,7 @@
 
 add this to envvar:
 
-    export OPENSCADPATH=$HOME/3dp-workbench/lib
+    export OPENSCADPATH=$HOME/3dprint/workbench/lib
 
 ref:
 

@@ -7,7 +7,7 @@
 
 /* [var] */
 //number of fragments[30=low:40=medium:60=high]
-$fn=40;
+$fn=20;
 //fit between case and phone[0.25]
 fit_tol=0.25;
 //adjust slot clearance[0.8]
@@ -27,7 +27,7 @@ test_print=0;
 
 /* [phone dimension var] */
 //phone width[72.36]
-phone_wid=70.49;
+phone_wid=80.49;
 //phone length[143.82]
 phone_len=145.17;
 //phone thickness[9.1]

@@ -67,4 +67,4 @@ module main(hole_n_x, hole_n_y, pool_cell_n_x, pool_cell_n_y) {
 
 // main(1, 1, 0, 0);  // 1 single cell, good for test
 // main(6, 6, 3, 3);
-main(9, 6, 9, 2);  // long pool, can hold long bit head
+main(9, 7, 9, 3);  // long pool, can hold long bit head
